@@ -25,12 +25,36 @@
 // }
 
 
+// export const BookCard = ({ title, author, cover, rate }) => {
+//   console.log(props);
+//   return <div>
+//     <h2>название: {title}</h2>
+//     <p>автор: {author}</p>
+//     <img src={cover} alt="Обложка" />
+//     <p>рейтинг: {rate}</p>
+//   </div>
+// }
+
+// import styled from "styled-components";
+import { SMainContainer, SContainer, SContent, SRightPart, STitle, SCover, SAuthor, SRate, SLine } from "./Bookcard.styled";
+
+
 // применяем деструктуризацию
-export const BookCard = ({title, author, cover, rate}) => {
-  return <div>
-    <h2>название: {title}</h2>
-    <p>автор: {author}</p>
-    <img src={cover} alt="Обложка" />
-    <p>рейтинг: {rate}</p>
-  </div>
+export const BookCard = ({ title, author, cover, rate }) => {
+  return (
+    // <>
+    <SMainContainer>
+      <SContainer>
+        <SCover src={cover} alt="Обложка"></SCover>
+        <SRightPart>
+          <SContent>
+            <STitle>название: {title}</STitle>
+            <SAuthor>автор: {author}</SAuthor>
+          </SContent>
+          <SRate>рейтинг: {rate}</SRate>
+        </SRightPart>
+      </SContainer>
+      <SLine />
+    </SMainContainer>
+  )
 }

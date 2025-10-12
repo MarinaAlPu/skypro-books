@@ -23,11 +23,12 @@
 // // export default BookList
 
 import { BookCard } from "../BookCard/BookCard";
+import { SList } from "./Booklist.styled";
 
 // на вход принимает массив книг
 export const BookList = ({ books }) => {
   return (
-    <ul>
+    <SList>
       {books.map((book, index) => {
         return (
           <li key={index}>
@@ -40,6 +41,6 @@ export const BookList = ({ books }) => {
           </li>
         );
       })}
-    </ul>
+    </SList>
   )
 }
