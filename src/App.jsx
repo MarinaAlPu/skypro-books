@@ -41,6 +41,8 @@ import { useState } from "react";
 import { BookList } from "./components/BookList/BookList";
 import { BookAddForm } from "./components/BookAddForm/BookAddForm";
 import { books } from "./data";
+import { GlobalStyle } from "./components/GlobalStyles";
+
 
 function App() {
   const [booksState, setBooksState] = useState(books); // в booksState будет храниться вся data
@@ -51,9 +53,10 @@ function App() {
 
   return (
     <>
-      <BookList books={booksState} />
-      <BookAddForm addBook={addBook}/>
-      {/* <button onClick={() => {
+      <GlobalStyle/>
+        <BookList books={booksState} />
+        <BookAddForm addBook={addBook} />
+        {/* <button onClick={() => {
         setbookState([])
       }}>Удалить книги</button> */}
     </>
