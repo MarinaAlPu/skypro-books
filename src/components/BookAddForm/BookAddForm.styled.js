@@ -41,29 +41,29 @@ export const SBottom = styled.div`
   /* gap: 5px; */
   `
 
-export const STitleContainer = styled.div`
+export const SRow = styled.div`
     display: flex;
     flex-direction: row;
     gap: 10px;
   `
 
-export const SAuthorContainer = styled.div`
-    display: flex;
-    flex-direction: row;
-    gap: 10px;
-  `
+// export const SAuthorContainer = styled.div`
+//     display: flex;
+//     flex-direction: row;
+//     gap: 10px;
+//   `
 
-export const SCoverContainer = styled.div`
-    display: flex;
-    flex-direction: row;
-    gap: 10px;
-  `
+// export const SCoverContainer = styled.div`
+//     display: flex;
+//     flex-direction: row;
+//     gap: 10px;
+//   `
 
-export const SRateContainer = styled.div`
-    display: flex;
-    flex-direction: row;
-    gap: 10px;
-  `
+// export const SRateContainer = styled.div`
+//     display: flex;
+//     flex-direction: row;
+//     gap: 10px;
+//   `
 
 export const STitle = styled.p`
   font-size: 24px;
