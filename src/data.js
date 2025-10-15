@@ -1,3 +1,10 @@
+export const attributes = [
+  { name: "title", value: "название" },
+  { name: "author", value: "автор" },
+  { name: "cover", value: "обложка" },
+  { name: "rate", value: "рейтинг" },
+]
+
 export const books = [
   {
     title: "1984",
@@ -12,9 +19,15 @@ export const books = [
     rate: "4.3"
   },
   // {
-  //   title: "Moomins",
+  //   title: "Moomin",
   //   author: "Tove Jansson",
   //   cover: "https://ir.ozone.ru/s3/multimedia-7/c1000/6847322875.jpg",
+  //   rate: "10",
+  // },
+  // {
+  //   title: "Приключения Чиполлино",
+  //   author: "Джанни Родари",
+  //   cover: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSrVV_UDeYn0RuEkFHdVEGCjbY6HQjU1FYaTQ&s",
   //   rate: "10",
   // },
 ];
