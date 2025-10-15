@@ -185,21 +185,23 @@
 
 
 import { useState } from "react";
-import { SRow, SMainContainer, STop, SBottom, STitle, SButton, SLabel, SInput } from "./BookAddForm.styled";
+import { SMainContainer, STop, SBottom, STitle, SButton } from "./BookAddForm.styled";
+import { BookAttribute } from "../BookAttribute/BookAttribute";
+import { attributes } from "../../data";
 
-const attributeName = [
-  { name: "title", value: "название" },
-  { name: "author", value: "автор" },
-  { name: "cover", value: "обложка" },
-  { name: "rate", value: "рейтинг" },
-]
+// const attributeName = [
+//   { name: "title", value: "название" },
+//   { name: "author", value: "автор" },
+//   { name: "cover", value: "обложка" },
+//   { name: "rate", value: "рейтинг" },
+// ]
 
 export const BookAddForm = ({ addBook }) => {
-  // state заполнения данных
-  const [title, setTitle] = useState();
-  const [author, setAuthor] = useState();
-  const [cover, setCover] = useState();
-  const [rate, setRate] = useState();
+  // // state заполнения данных
+  const [title, setTitle] = useState("");
+  const [author, setAuthor] = useState("");
+  const [cover, setCover] = useState("");
+  const [rate, setRate] = useState("");
 
   return (
     // <>
@@ -208,50 +210,89 @@ export const BookAddForm = ({ addBook }) => {
         <STitle>Добавление книги</STitle>
       </STop>
       {/* <SContainer> */}
-      {attributeName.map((attribute) => {
+      {attributes.map((attribute) => {
         return (
-          <SRow key={attribute.name}>
-            <SLabel htmlFor={attribute.name}>{attribute.value}</SLabel>
+          <BookAttribute
+            key={attribute.name} name={attribute.name} value={attribute.value}
+
+            // title={title} author={author} cover={cover} rate={rate}
+            onChange={(value) => {
+              switch (attribute.name) {
+                case "title":
+                  setTitle(value);
+                  break;
+                case "author":
+                  setAuthor(value);
+                  break;
+                case "cover":
+                  setCover(value);
+                  break;
+                case "rate":
+                  setRate(value);
+                  break;
+              }
+            }}
+
+            valueInput={attribute.name === "title" ? title : attribute.name === "author" ? author : attribute.name === "cover" ? cover : rate}
+
+          >
+            {/* <SLabel htmlFor={attribute.name}>{attribute.value}</SLabel>
             <SInput
               onChange={(event) => {
-                setTitle(event.target.value)
+                switch (attribute.name) {
+                  case "title":
+                    setTitle(event.target.value);
+                    break;
+                  case "author":
+                    setAuthor(event.target.value);
+                    break;
+                  case "cover":
+                    setCover(event.target.value);
+                    break;
+                  case "rate":
+                    setRate(event.target.value);
+                    break;
+                }
               }}
-              id={attribute.name} value={title} type="text" placeholder={attribute.value} />
-          </SRow>
+              id={attribute.name}
+              value={attribute.name === "title" ? title : attribute.name === "author" ? author : attribute.name === "cover" ? cover : rate}
+              type="text"
+              placeholder={attribute.value} /> */}
+          </BookAttribute>
         )
       })}
-      {/* <SRow>
+      {/* <SAttribute>
         <SLabel htmlFor="title">название</SLabel>
         <SInput
           onChange={(event) => {
             setTitle(event.target.value)
           }}
           id="title" value={title} type="text" placeholder="название" />
-      </SRow>
-      <SRow>
+      </SAttribute>
+      <SAttribute>
         <SLabel htmlFor="author">автор</SLabel>
         <SInput
           onChange={(event) => {
             setAuthor(event.target.value)
           }}
           id="author" value={author} type="text" placeholder="автор" />
-      </SRow>
-      <SRow>
+      </SAttribute>
+      <SAttribute>
         <SLabel htmlFor="cover">обложка</SLabel>
         <SInput
           onChange={(event) => {
             setCover(event.target.value)
           }}
           id="cover" value={cover} type="text" placeholder="обложка" />
-      </SRow>
-      <SRow>
+      </SAttribute>
+      <SAttribute>
         <SLabel htmlFor="rate">рейтинг</SLabel>
         <SInput
           onChange={(event) => {
             setRate(event.target.value)
           }}
           id="rate" value={rate} type="text" placeholder="рейтинг" />
-      </SRow> */}
+      </SAttribute> */}
       {/* </SContainer> */}
       <SBottom>
         <SButton
@@ -320,3 +361,61 @@ export const BookAddForm = ({ addBook }) => {
     // </form>
   )
 }
+
+
+
+// export const BookAddForm = ({ addBook }) => {
+//   // // state заполнения данных
+//   const [title, setTitle] = useState("");
+//   const [author, setAuthor] = useState("");
+//   const [cover, setCover] = useState("");
+//   const [rate, setRate] = useState("");
+
+//   return (
+//     // <>
+//     <SMainContainer>
+//       <STop>
+//         <STitle>Добавление книги</STitle>
+//       </STop>
+//       {attributes.map((attribute) => {
+//         return (
+//           <BookAttribute
+//             key={attribute.name} name={attribute.name} value={attribute.value}
+//             onChange={(event) => {
+//               switch (attribute.name) {
+//                 case "title":
+//                   setTitle(event.target.value);
+//                   break;
+//                 case "author":
+//                   setAuthor(event.target.value);
+//                   break;
+//                 case "cover":
+//                   setCover(event.target.value);
+//                   break;
+//                 case "rate":
+//                   setRate(event.target.value);
+//                   break;
+//               }
+//             }}
+//             valueInput={attribute.name === "title" ? title : attribute.name === "author" ? author : attribute.name === "cover" ? cover : rate}
+//           >
+//           </BookAttribute>
+//         )
+//       })}
+//       <SBottom>
+//         <SButton
+//           type="button"
+//           onClick={() => {
+//             addBook({ title, author, cover, rate });
+//             setTitle("");
+//             setAuthor("");
+//             setCover("");
+//             setRate("");
+//           }}
+//         >
+//           Добавить книгу
+//         </SButton>
+//       </SBottom>
+//     </SMainContainer>
+//   )
+// }
