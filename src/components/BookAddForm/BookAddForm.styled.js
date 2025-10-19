@@ -47,6 +47,12 @@ export const SBottom = styled.div`
 //     gap: 10px;
 //   `
 
+// export const STitleContainer = styled.div`
+//     display: flex;
+//     flex-direction: row;
+//     gap: 10px;
+//   `
+
 // export const SAuthorContainer = styled.div`
 //     display: flex;
 //     flex-direction: row;
@@ -71,6 +77,7 @@ export const STitle = styled.p`
   `
 
 export const SButton = styled.button`
+  font-size: 16px;
   font-weight: bold;
   width: 150px;
   height: 30px;
@@ -83,14 +90,20 @@ export const SButton = styled.button`
   }
 `
 
-// export const SLabel = styled.label`
-//   width: 70px;
-// `
+export const SLabel = styled.label`
+  width: 70px;
+`
 
-// export const SInput = styled.input`
-//   width: 200px;
-//   border-radius: 5px;
-//   border: 1px solid #101010;
-//   height: 20px;
-//   padding-left: 5px;
-// `
+export const SInput = styled.input`
+  width: 200px;
+  border-radius: 5px;
+  border: 1px solid #101010;
+  height: 20px;
+  padding-left: 5px;
+`
+
+export const SAttributeContainer = styled.div`
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+`
