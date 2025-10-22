@@ -42,10 +42,15 @@ export const STitle = styled.p`
 export const SAuthor = styled.p`
   font-size: 18px;
   font-weight: bold;
-`
+  `
 
 export const SRate = styled.p`
   font-weight: bold;
+  `
+
+export const SCategory = styled.p`
+  font-size: 14px;  
+  /* font-weight: bold; */
 `
 
 export const SLine = styled.hr`

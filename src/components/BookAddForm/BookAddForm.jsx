@@ -1,8 +1,9 @@
 import { useState } from "react";
 // import { SMainContainer, STop, SBottom, STitle, SButton, STitleContainer, SAuthorContainer, SCoverContainer, SRateContainer, SLabel, SInput } from "./BookAddForm.styled";
-import { SMainContainer, STop, SBottom, STitle, SButton, SAttributeContainer, SLabel, SInput } from "./BookAddForm.styled";
+import { SMainContainer, STop, SBottom, STitle, SAttributeContainer, SLabel, SInput } from "./BookAddForm.styled";
 // import { BookAttribute } from "../BookAttribute/BookAttribute";
 // import { attributes } from "../../data";
+import { Button } from "../Button/Button";
 
 
 // export const BookAddForm = ({ addBook }) => {
@@ -64,10 +65,15 @@ import { SMainContainer, STop, SBottom, STitle, SButton, SAttributeContainer, SL
 // }
 
 export const BookAddForm = ({ addBook }) => {
+  const categories = {
+    adult: "взрослые",
+    kids: "детские"
+  }
   const [title, setTitle] = useState("");
   const [author, setAuthor] = useState("");
   const [cover, setCover] = useState("");
   const [rate, setRate] = useState("");
+  const [category, setCategory] = useState("");
 
   return (
     // <>
@@ -114,19 +120,27 @@ export const BookAddForm = ({ addBook }) => {
           }}
           id="rate" value={rate} type="text" placeholder="рейтинг" />
       </SAttributeContainer>
+      <SAttributeContainer>
+        <SLabel htmlFor="category">категория</SLabel>
+        <SInput
+          onChange={(event) => {
+            setCategory(event.target.value)
+          }}
+          id="category" value={category} type="text" placeholder="категория" />
+      </SAttributeContainer>
       <SBottom>
-        <SButton
+        <Button
           type="button"
           onClick={() => {
-            addBook({ title, author, cover, rate });
+            addBook({ title, author, cover, rate, category });
             setTitle("");
             setAuthor("");
             setCover("");
             setRate("");
           }}
+          text="Добавить книгу"
         >
-          Добавить книгу
-        </SButton>
+        </Button>
       </SBottom>
     </SMainContainer>
   )

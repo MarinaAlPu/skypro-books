@@ -76,19 +76,19 @@ export const STitle = styled.p`
   font-weight: bold;
   `
 
-export const SButton = styled.button`
-  font-size: 16px;
-  font-weight: bold;
-  width: 150px;
-  height: 30px;
-  border-radius: 5px;
-  border: 1px solid #101010;
-  background-color: #f3f3f3;
-  &:hover{
-    background-color: #dbdbdbff;
-    border: 1px solid #101010;
-  }
-`
+// export const SButton = styled.button`
+//   font-size: 16px;
+//   font-weight: bold;
+//   width: 150px;
+//   height: 30px;
+//   border-radius: 5px;
+//   border: 1px solid #101010;
+//   background-color: #f3f3f3;
+//   &:hover{
+//     background-color: #dbdbdbff;
+//     border: 1px solid #101010;
+//   }
+// `
 
 export const SLabel = styled.label`
   width: 70px;

@@ -37,26 +37,50 @@
 // export default App
 
 // import { BookCard } from "./components/BookCard/BookCard";
-import { useState } from "react";
-import { BookList } from "./components/BookList/BookList";
-import { BookAddForm } from "./components/BookAddForm/BookAddForm";
-import { books } from "./data";
+// import { useState, useEffect } from "react";
+// import { BookList } from "./components/BookList/BookList";
+// import { BookAddForm } from "./components/BookAddForm/BookAddForm";
+// import { books } from "./data";
 import { GlobalStyle } from "./components/GlobalStyles";
+// import { getBooks, postBook } from "./api";
+import { Main } from "./components/Main/Main";
+// import { catagories } from "./data";
+// import { AppRoutes } from "./components/AppRoutes";
 
+
+// ДЗ
+// роутинг: корневой адрес - все книги открываются
+// категории книг - свой адрес каждой категории (ключ для категории)
+// главная страница - кнопка для перехода в категорию
+
+// форма авторизации - вёрстка
 
 function App() {
-  const [booksState, setBooksState] = useState(books); // в booksState будет храниться вся data
+  // return <AppRoutes />
 
-  const addBook = (newBook) => {
-    setBooksState((prevBooks) => [...prevBooks, newBook])
-  }
+
+  // const [booksState, setBooksState] = useState([]); // в booksState будет храниться вся data
+
+  // const addBook = (newBook) => {
+  //   postBook(newBook)
+  //     .then((data) => {
+  //       setBooksState((prevBooks) => [...prevBooks, data])
+  //     })
+  // }
+
+  // useEffect(() => {
+  //   getBooks()
+  //     .then((data) => {
+  //       setBooksState(data)
+  //       // console.log(data);
+  //     })
+  // }, [])
 
   return (
     <>
-      <GlobalStyle/>
-        <BookList books={booksState} />
-        <BookAddForm addBook={addBook} />
-        {/* <button onClick={() => {
+      <GlobalStyle />
+      <Main />
+      {/* <button onClick={() => {
         setbookState([])
       }}>Удалить книги</button> */}
     </>
