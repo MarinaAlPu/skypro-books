@@ -1,8 +1,8 @@
 import { SButton } from "./Button.styled";
 
 
-export const Button = ({text}) => {
+export const Button = ({ text, onClick }) => {
   return (
-    <SButton>{text}</SButton>
+    <SButton onClick={onClick}>{text}</SButton>
   )
 }
